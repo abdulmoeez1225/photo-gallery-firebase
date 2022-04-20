@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/photo-gallery-firebase/static/css/main.8cdd13ca.css",
+    "main.js": "/photo-gallery-firebase/static/js/main.e5e27b2d.js",
+    "index.html": "/photo-gallery-firebase/index.html",
+    "main.8cdd13ca.css.map": "/photo-gallery-firebase/static/css/main.8cdd13ca.css.map",
+    "main.e5e27b2d.js.map": "/photo-gallery-firebase/static/js/main.e5e27b2d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8cdd13ca.css",
+    "static/js/main.e5e27b2d.js"
+  ]
+}
