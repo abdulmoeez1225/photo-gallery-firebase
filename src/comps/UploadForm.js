@@ -1,45 +1,41 @@
 import React, { useRef, useState } from "react";
-import ProgressBar from "./ProgressBar";
+import ProgressComponent from "./ProgressComponent";
+
+import { FaArrowUp } from "react-icons/fa";
+import { ProgressBar } from "react-bootstrap";
 
 const UploadForm = () => {
-  const fileRef = useRef();
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
 
-  const types = ["image/jpeg", "image/png", "image/jpg"];
-  const changeHandler = (e) => {
+  const types = ["image/png", "image/jpeg"];
+
+  const handleChange = (e) => {
     let selected = e.target.files[0];
-    console.log("changed", selected);
-    if (selected && selected.size > 0 && types.includes(selected.type)) {
+    if (selected && types.includes(selected.type)) {
       setFile(selected);
+      setError("");
     } else {
       setFile(null);
-      setError("Please select a valid image file (jpg, jpeg, png)");
+      setError("Please select an image file (png or jpg)");
     }
-    // setTimeout(() => {
-    //   console.log("timeout");
-    //   fileRef.current.value = null;
-    // }, 2000);
   };
 
   return (
-    <div>
-      <input
-        type="file"
-        name="file"
-        ref={fileRef}
-        id="file"
-        accept="image/*"
-        onChange={changeHandler}
-      />
-      <span>+</span>
-      <div className="output">
-        {error && <div className="error">{error} </div>}
-        {/* {file && <img src={URL.createObjectURL(file)} alt="preview" />} */}
-        {file && <div>{file.name} </div>}
-        {file && <ProgressBar file={file} setFile={setFile} />}
+    <form>
+      <div className="upload-container">
+        <div className="file-upload">
+          <input type="file" onChange={handleChange} />
+
+          <FaArrowUp size={50} />
+        </div>
+        <div className="output">
+          {error && <div className="error">{error} </div>}
+          {file && <div>{file.name} </div>}
+          {file && <ProgressComponent file={file} setFile={setFile} />}
+        </div>
       </div>
-    </div>
+    </form>
   );
 };
 
