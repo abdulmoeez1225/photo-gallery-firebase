@@ -1,5 +1,5 @@
 {
-  "homepage": "http://abdulmoeez1225.github.io/photo-gallery-firebase",
+  "homepage": "https://abdulmoeez1225.github.io/photo-gallery-firebase",
   "name": "photo-gallery",
   "version": "0.1.0",
   "private": true,
@@ -10,6 +10,7 @@
     "bootstrap": "^5.1.3",
     "firebase": "^9.6.11",
     "framer-motion": "^6.3.0",
+    "gh-pages": "^3.2.3",
     "react": "^18.0.0",
     "react-bootstrap": "^2.3.0",
     "react-dom": "^18.0.0",
@@ -44,7 +45,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3",
     "react-devtools": "^4.24.4"
   }
 }
